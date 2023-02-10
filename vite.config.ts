@@ -1,11 +1,17 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import { ViteRsw } from 'vite-plugin-rsw'
-
+import { resolve } from 'path'
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: './',
   plugins: [vue(), ViteRsw()],
-
+  resolve: {
+    // ↓路径别名
+    alias: {
+      '@': resolve(__dirname, './src'),
+    },
+  },
   // Vite options tailored for Tauri development and only applied in `tauri dev` or `tauri build`
   // prevent vite from obscuring rust errors
   clearScreen: false,

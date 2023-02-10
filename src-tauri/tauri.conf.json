@@ -7,7 +7,7 @@
     "withGlobalTauri": false
   },
   "package": {
-    "productName": "桌面应用",
+    "productName": "app",
     "version": "0.1.0"
   },
   "tauri": {
@@ -62,7 +62,7 @@
         "fullscreen": false,
         "height": 600,
         "resizable": true,
-        "title": "桌面应用",
+        "title": "app",
         "width": 800
       }
     ]
