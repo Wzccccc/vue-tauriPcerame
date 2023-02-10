@@ -1,0 +1,25 @@
+#! link 类型: `npm` | `yarn` | `pnpm`, 默认是 `npm`
+cli = "npm"
+
+[new]
+#! 使用: `wasm-pack` | `rsw` | `user`, 默认 `wasm-pack`
+#! 1. wasm-pack: `rsw new <name> --template <template> --mode <normal|noinstall|force>`
+#! 2. rsw: `rsw new <name>`, 内置模板
+#! 3. user: `rsw new <name>`，如果 `dir`未配置, 则使用 `wasm-pack new <name>`初始化 wasm 项目
+using = "rsw"
+#! 当 `using = "user"` 时，`dir` 才会生效
+#! 如果 `using = "wasm-pack"` 或 `using = "rsw"`，则忽略
+#! 复制此目录下的所有文件到初始化的 wasm 项目中
+dir = "my-template"
+
+[[crates]]
+#! npm 包，@mywasm 为 npm 组织，foo 是该组织下的包名
+name = "@mywasm/foo"
+#! 是否执行 link， link 类型通过 `cli` 配置
+link = true
+
+[[crates]]
+#! npm 包，@mywasm 为 npm 组织，bar 是该组织下的包名
+name = "@mywasm/bar"
+#! 是否执行 link， link 类型通过 `cli` 配置
+link = true
